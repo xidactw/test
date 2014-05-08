@@ -19,8 +19,6 @@
 		1B071240191B1460005BBD20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B07123F191B1460005BBD20 /* XCTest.framework */; };
 		1B071241191B1460005BBD20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B071220191B1460005BBD20 /* Foundation.framework */; };
 		1B071242191B1460005BBD20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B071224191B1460005BBD20 /* UIKit.framework */; };
-		1B07124A191B1460005BBD20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B071248191B1460005BBD20 /* InfoPlist.strings */; };
-		1B07124C191B1460005BBD20 /* NSArrayTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B07124B191B1460005BBD20 /* NSArrayTestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +48,6 @@
 		1B071238191B1460005BBD20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1B07123E191B1460005BBD20 /* NSArrayTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSArrayTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B07123F191B1460005BBD20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1B071247191B1460005BBD20 /* NSArrayTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayTestTests-Info.plist"; sourceTree = "<group>"; };
-		1B071249191B1460005BBD20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B07124B191B1460005BBD20 /* NSArrayTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayTestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				1B071226191B1460005BBD20 /* NSArrayTest */,
-				1B071245191B1460005BBD20 /* NSArrayTestTests */,
 				1B07121F191B1460005BBD20 /* Frameworks */,
 				1B07121E191B1460005BBD20 /* Products */,
 			);
@@ -130,24 +124,6 @@
 				1B071229191B1460005BBD20 /* InfoPlist.strings */,
 				1B07122C191B1460005BBD20 /* main.m */,
 				1B07122E191B1460005BBD20 /* NSArrayTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1B071245191B1460005BBD20 /* NSArrayTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				1B07124B191B1460005BBD20 /* NSArrayTestTests.m */,
-				1B071246191B1460005BBD20 /* Supporting Files */,
-			);
-			path = NSArrayTestTests;
-			sourceTree = "<group>";
-		};
-		1B071246191B1460005BBD20 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1B071247191B1460005BBD20 /* NSArrayTestTests-Info.plist */,
-				1B071248191B1460005BBD20 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B07124A191B1460005BBD20 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B07124C191B1460005BBD20 /* NSArrayTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,14 +262,6 @@
 				1B071233191B1460005BBD20 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1B071248191B1460005BBD20 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B071249191B1460005BBD20 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -460,6 +426,7 @@
 				1B071251191B1460005BBD20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B071252191B1460005BBD20 /* Build configuration list for PBXNativeTarget "NSArrayTestTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +435,7 @@
 				1B071254191B1460005BBD20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
