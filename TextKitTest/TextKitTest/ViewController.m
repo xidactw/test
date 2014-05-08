@@ -97,125 +97,24 @@
     textView.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:textView];
     
+    [self gaoliang:label];
     
     
+}
+
+
+// 高亮
+- (void)gaoliang:(UILabel *)label{
     
-    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:label.attributedText];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(1, 3)];
+    label.attributedText = attributedString;
     
 }
 
 
 
-// NSAttributedStringTest
-- (void)attributedStringTest{
-//    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 20, 100, 50)];
-    label.text = @"haha123123123123123123123123123123123";
-    label.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:label];
-    
-    
-    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(20, 120, 100, 50)];
-    textField.text = @"haha2";
-    textField.backgroundColor = [UIColor redColor];
-    [self.view addSubview:textField];
-   
-//    UIFont *font = [[UIFont alloc]init];
 
-    CGRect fontFrame = CGRectMake(20, 200, 100, 50);
-//    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-//    /// Set line break mode
-//    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
-//    /// Set text alignment
-//    paragraphStyle.alignment = NSTextAlignmentRight;
-//    NSDictionary *dict = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:10.0],
-//
-//                           NSParagraphStyleAttributeName: paragraphStyle,
-//                           NSForegroundColorAttributeName : [UIColor redColor],
-//                           NSStrokeWidthAttributeName : @3,
-//                           NSStrokeColorAttributeName : [UIColor greenColor]
-//                           };
-//    [@"oyeyeyeyey" drawInRect:fontFrame withAttributes:dict];
-//    
-    
-    
-//    UIFont *font = [UIFont fontWithName:@"Courier" size:11.5];
-//    
-//    /// Make a copy of the default paragraph style
-//    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-//    /// Set line break mode
-//    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
-//    /// Set text alignment
-//    paragraphStyle.alignment = NSTextAlignmentRight;
-//    
-//    NSDictionary *attributes = @{ NSFontAttributeName: font,
-//                                  NSParagraphStyleAttributeName: paragraphStyle };
-//    NSString *string = @"asdfsdfasdf";
-//    [string drawInRect:fontFrame withAttributes:attributes];
-//    
-    
-
-    
-    NSMutableAttributedString *mutableAS = [[NSMutableAttributedString alloc]initWithAttributedString:label.attributedText];
-//    [mutableAS addAttribute:@"aa" value:@"aa" range:NSMakeRange(1, 2)];
-    [mutableAS addAttribute:NSForegroundColorAttributeName value:(id)[UIColor yellowColor]range:NSMakeRange(0, 2)];
-    [mutableAS addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(2, 4)];
-    [mutableAS addAttribute:NSBackgroundColorDocumentAttribute value:[UIColor redColor] range:NSMakeRange(0, 5)];
-
-    label.attributedText = mutableAS;
-    NSLog(@"%ld",label.attributedText.length);
-//
-//    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:label.font forKey:NSFontAttributeName];
-//
-//    NSDictionary *attrsDictionary2 = [NSDictionary dictionaryWithObject:textField.font forKey:NSFontAttributeName];
-//    
-
-}
-
-
-
-
-// 字体操作
-- (void)ziticaozuo{
-
-
-    
-    
-}
-
-// 创建测试
-- (void)createTest{
-    
-    // NSTextStorage ->> NSLayoutManager ->> NSTextContainer
-    
-    NSTextStorage *textStorage = [NSTextStorage new];
-    
-    NSLayoutManager *layoutManager = [NSLayoutManager new];
-    
-    NSTextContainer *textContainer = [NSTextContainer new];
-    
-    
-    
-    
-    UITextView *textView = [UITextView new];
-    
-    [textStorage addLayoutManager:layoutManager];
-    
-    [layoutManager addTextContainer:textContainer];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
 
 
 
