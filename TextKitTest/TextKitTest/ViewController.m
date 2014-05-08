@@ -129,23 +129,28 @@
 // NSKernAttributeName                          字间距
 // NSStrikethroughStyleAttributeName            删除线
     /*
+     NSUnderlineStyleNone                                = 0x00,
+     NSUnderlineStyleSingle                              = 0x01,
+     NSUnderlineStyleThick NS_ENUM_AVAILABLE_IOS(7_0)    = 0x02,
+     NSUnderlineStyleDouble NS_ENUM_AVAILABLE_IOS(7_0)   = 0x09,
      
+     NSUnderlinePatternSolid NS_ENUM_AVAILABLE_IOS(7_0)      = 0x0000,
+     NSUnderlinePatternDot NS_ENUM_AVAILABLE_IOS(7_0)        = 0x0100,
+     NSUnderlinePatternDash NS_ENUM_AVAILABLE_IOS(7_0)       = 0x0200,
+     NSUnderlinePatternDashDot NS_ENUM_AVAILABLE_IOS(7_0)    = 0x0300,
+     NSUnderlinePatternDashDotDot NS_ENUM_AVAILABLE_IOS(7_0) = 0x0400,
      
-     
-     
-     
-     
-     
+     NSUnderlineByWord NS_ENUM_AVAILABLE_IOS(7_0) = 0x8000
      */
-// NSUnderlineStyleAttributeName
+// NSUnderlineStyleAttributeName                下划线
 // NSStrokeColorAttributeName
 // NSStrokeWidthAttributeName
 // NSShadowAttributeName
 // NSTextEffectAttributeName
 // NSAttachmentAttributeName
 // NSLinkAttributeName
-// NSBaselineOffsetAttributeName
-// NSUnderlineColorAttributeName                删除线颜色
+// NSBaselineOffsetAttributeName                删除线颜色
+// NSUnderlineColorAttributeName                下划线颜色
 // NSStrikethroughColorAttributeName
 // NSObliquenessAttributeName
 // NSExpansionAttributeName
@@ -179,11 +184,29 @@
     // 字间距
     [attributedString addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:3.3] range:NSMakeRange(10,2)];
     
-    // 删除线设置
+    // 删除线
     [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(12, 2)];
+    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(14, 2)];
+    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleDouble] range:NSMakeRange(16, 2)];
+    // 效果未实现
+//    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternSolid] range:NSMakeRange(18, 2)];
+//    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternDot] range:NSMakeRange(20, 2)];
+//    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternDash] range:NSMakeRange(22, 2)];
+//    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternDashDot] range:NSMakeRange(24, 2)];
+    
+    // 下划线
+    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(18, 2)];
+    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleDouble] range:NSMakeRange(20, 2)];
+
+    
+    
     
     // 删除线颜色
     [attributedString addAttribute:NSStrikethroughColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(12, 2)];
+    
+    // 下划线颜色
+    [attributedString addAttribute:NSUnderlineColorAttributeName value:[UIColor redColor] range:NSMakeRange(18, 4)];
+    
     
     
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, 2)];
