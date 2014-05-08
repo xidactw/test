@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBFE2FA191B72E7004672DC /* 001.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFE2F9191B72E7004672DC /* 001.gif */; };
 		1BC3E2AB1918789900137FDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC3E2AA1918789900137FDC /* Foundation.framework */; };
 		1BC3E2AD1918789900137FDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC3E2AC1918789900137FDC /* CoreGraphics.framework */; };
 		1BC3E2AF1918789900137FDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC3E2AE1918789900137FDC /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BBFE2F9191B72E7004672DC /* 001.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 001.gif; sourceTree = "<group>"; };
 		1BC3E2A71918789900137FDC /* TextKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC3E2AA1918789900137FDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BC3E2AC1918789900137FDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +120,7 @@
 				1BC3E2BF1918789900137FDC /* ViewController.h */,
 				1BC3E2C01918789900137FDC /* ViewController.m */,
 				1BC3E2C21918789900137FDC /* Images.xcassets */,
+				1BBFE2F9191B72E7004672DC /* 001.gif */,
 				1BC3E2B11918789900137FDC /* Supporting Files */,
 			);
 			path = TextKitTest;
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBFE2FA191B72E7004672DC /* 001.gif in Resources */,
 				1BC3E2C31918789900137FDC /* Images.xcassets in Resources */,
 				1BC3E2B51918789900137FDC /* InfoPlist.strings in Resources */,
 				1BC3E2BE1918789900137FDC /* Main.storyboard in Resources */,
@@ -381,6 +385,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextKitTest/TextKitTest-Prefix.pch";
 				INFOPLIST_FILE = "TextKitTest/TextKitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextKitTest/TextKitTest-Prefix.pch";
 				INFOPLIST_FILE = "TextKitTest/TextKitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
