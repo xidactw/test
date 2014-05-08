@@ -22,9 +22,6 @@
     [self fenyexianshi];
     
     [self zitixiaoguo];
-
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,21 +77,21 @@
 
 - (void)zitixiaoguo{
     
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 230, 290, 30)];
-    label.text = @"labelziti123456789012345678901";
-    label.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:label];
-    
-    
-    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(20, 270, 290, 30)];
-    textField.text = @"textField123123123";
-    textField.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:textField];
-    
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 230, 290, 30)];
+//    label.text = @"labelziti123456789012345678901";
+//    label.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:label];
+//    
+//    
+//    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(20, 270, 290, 30)];
+//    textField.text = @"textField123123123";
+//    textField.backgroundColor = [UIColor orangeColor];
+//    [self.view addSubview:textField];
+//    
     
     UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, 310, 290, 200)];
-    textView.text = @"textView123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
-    textView.backgroundColor = [UIColor purpleColor];
+    textView.text = @"textVifafa3456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+    textView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview:textView];
     
     [self xiaoguoceshi:textView];
@@ -120,11 +117,26 @@
      lineHeightMultiple                             可变行高,乘因数。
      hyphenationFactor                              连字符属性
      */
-//  NSForegroundColorAttributeName
-// NSBackgroundColorAttributeName
-// NSLigatureAttributeName
+// NSForegroundColorAttributeName               字体颜色
+// NSBackgroundColorAttributeName               字体背景颜色
+// NSLigatureAttributeName                      连字属性
+    /*
+     对应value nsnumber
+     0                                              不连笔
+     1                                              默认连笔
+     2                                              ios不支持2及2以上
+     */
 // NSKernAttributeName                          字间距
-// NSStrikethroughStyleAttributeName
+// NSStrikethroughStyleAttributeName            删除线
+    /*
+     
+     
+     
+     
+     
+     
+     
+     */
 // NSUnderlineStyleAttributeName
 // NSStrokeColorAttributeName
 // NSStrokeWidthAttributeName
@@ -133,7 +145,7 @@
 // NSAttachmentAttributeName
 // NSLinkAttributeName
 // NSBaselineOffsetAttributeName
-// NSUnderlineColorAttributeName
+// NSUnderlineColorAttributeName                删除线颜色
 // NSStrikethroughColorAttributeName
 // NSObliquenessAttributeName
 // NSExpansionAttributeName
@@ -151,8 +163,27 @@
     // 段落
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.alignment = NSTextAlignmentLeft;
-    paragraphStyle.firstLineHeadIndent = 50;    // 首行锁进
+    paragraphStyle.firstLineHeadIndent = 20;    // 首行锁进
     paragraphStyle.lineHeightMultiple = 1.5;    // 1.5行间距
+    
+    // 字体颜色
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(2, 2)];
+    
+    // 字体背景颜色
+    [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4, 2)];
+
+    // 连字设置 效果未实现
+    [attributedString addAttribute:NSLigatureAttributeName value:[NSNumber numberWithInt:0] range:NSMakeRange(6, 2)];
+    [attributedString addAttribute:NSLigatureAttributeName value:[NSNumber numberWithInt:1] range:NSMakeRange(8, 2)];
+    
+    // 字间距
+    [attributedString addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:3.3] range:NSMakeRange(10,2)];
+    
+    // 删除线设置
+    [attributedString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(12, 2)];
+    
+    // 删除线颜色
+    [attributedString addAttribute:NSStrikethroughColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(12, 2)];
     
     
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, 2)];
