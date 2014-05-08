@@ -143,9 +143,16 @@
      NSUnderlineByWord NS_ENUM_AVAILABLE_IOS(7_0) = 0x8000
      */
 // NSUnderlineStyleAttributeName                下划线
-// NSStrokeColorAttributeName
-// NSStrokeWidthAttributeName
+// NSStrokeColorAttributeName                   字体颜色 ＊
+// NSStrokeWidthAttributeName                   笔画粗细 ＊与上边属性一起设置才生效
 // NSShadowAttributeName
+    /*
+     NSShadow
+     shadowOffset                                   阴影偏移默认      (0,-3)
+     shadowBlurRadius                               阴影半径
+     shadowColor                                    阴影颜色
+     */
+
 // NSTextEffectAttributeName
 // NSAttachmentAttributeName
 // NSLinkAttributeName
@@ -197,8 +204,25 @@
     // 下划线
     [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(18, 2)];
     [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleDouble] range:NSMakeRange(20, 2)];
-
     
+    // 字体颜色
+    [attributedString addAttribute:NSStrokeColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(22, 2)];
+    
+    // 笔画粗细
+    [attributedString addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithFloat:3.3] range:NSMakeRange(22, 2)];
+    
+    // 设置阴影
+    NSShadow *shadow = [[NSShadow alloc]init];
+    shadow.shadowColor = [UIColor purpleColor];
+    shadow.shadowOffset = CGSizeMake(1, -8);
+    shadow.shadowBlurRadius = 2.0;
+    
+    [attributedString addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(24, 2)];
+    NSShadow *shadow1 = [[NSShadow alloc]init];
+    shadow1.shadowColor = [UIColor purpleColor];
+    shadow1.shadowOffset = CGSizeMake(1, 8);
+    shadow1.shadowBlurRadius = 2.0;
+    [attributedString addAttribute:NSShadowAttributeName value:shadow1 range:NSMakeRange(26, 2)];
     
     
     // 删除线颜色
