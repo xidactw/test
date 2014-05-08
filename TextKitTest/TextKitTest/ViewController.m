@@ -81,7 +81,7 @@
 - (void)zitixiaoguo{
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 230, 290, 30)];
-    label.text = @"labelziti123123123";
+    label.text = @"labelziti123456789012345678901";
     label.backgroundColor = [UIColor grayColor];
     [self.view addSubview:label];
     
@@ -92,23 +92,84 @@
     [self.view addSubview:textField];
     
     
-    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, 310, 290, 30)];
-    textView.text = @"textView123123123";
+    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, 310, 290, 200)];
+    textView.text = @"textView123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
     textView.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:textView];
     
-    [self gaoliang:label];
+    [self xiaoguoceshi:textView];
     
     
 }
 
-
-// 高亮
-- (void)gaoliang:(UILabel *)label{
+// NSFontAttributeName                          设置字体
+// NSParagraphStyleAttributeName                设置段落
+    /*
+     NSParagraphStyle属性
+     alignment                                      对齐方式
+     firstLineHeadIndent                            首行缩进
+     headIndent                                     缩进
+     tailIndent                                     尾部缩进
+     lineBreakMode                                  断行方式
+     maximumLineHeight                              最大行高
+     minimumLineHeight                              最低行高
+     lineSpacing                                    行距
+     paragraphSpacing                               段距
+     paragraphSpacingBefore                         段首空间
+     baseWritingDirection                           句子方向
+     lineHeightMultiple                             可变行高,乘因数。
+     hyphenationFactor                              连字符属性
+     */
+//  NSForegroundColorAttributeName
+// NSBackgroundColorAttributeName
+// NSLigatureAttributeName
+// NSKernAttributeName                          字间距
+// NSStrikethroughStyleAttributeName
+// NSUnderlineStyleAttributeName
+// NSStrokeColorAttributeName
+// NSStrokeWidthAttributeName
+// NSShadowAttributeName
+// NSTextEffectAttributeName
+// NSAttachmentAttributeName
+// NSLinkAttributeName
+// NSBaselineOffsetAttributeName
+// NSUnderlineColorAttributeName
+// NSStrikethroughColorAttributeName
+// NSObliquenessAttributeName
+// NSExpansionAttributeName
+// NSWritingDirectionAttributeName
+// NSVerticalGlyphFormAttributeName
+// 效果测试
+- (void)xiaoguoceshi:(UITextView *)textView{
+    NSLog(@"%@",textView.attributedText);
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:label.attributedText];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(1, 3)];
-    label.attributedText = attributedString;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:textView.attributedText];
+
+    // 设置字体
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"times" size:30.0] range:NSMakeRange(0, 2)];
+    
+    // 段落
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    paragraphStyle.firstLineHeadIndent = 50;    // 首行锁进
+    paragraphStyle.lineHeightMultiple = 1.5;    // 1.5行间距
+    
+    
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, 2)];
+    
+    
+    
+    
+    
+//    // 高亮
+//    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(2, 2)];
+//    
+//    // 下划线
+//    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:1] range:NSMakeRange(4, 2)];
+    
+    
+    
+    textView.attributedText = attributedString;
     
 }
 
