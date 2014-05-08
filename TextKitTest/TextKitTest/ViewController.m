@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextViewDelegate>
 @property (nonatomic,strong) UITextView *textView;
-
+@property (nonatomic,strong) UITextView *xiaoguoceshitextView;
 @end
 
 @implementation ViewController
@@ -93,8 +93,10 @@
     textView.text = @"textVifafa3456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
     textView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview:textView];
-    
+    _xiaoguoceshitextView = textView;
+    textView.delegate = self;
     [self xiaoguoceshi:textView];
+
     
     
 }
@@ -118,7 +120,7 @@
      hyphenationFactor                              连字符属性
      */
 // NSForegroundColorAttributeName               字体颜色
-// NSBackgroundColorAttributeName               字体背景颜色
+// NSBackgroundColorAttributeName               字体背景颜色 :该属性在7.0上当绘制y坐标大于0时不起作用,是属于7.0版本的BUG.
 // NSLigatureAttributeName                      连字属性
     /*
      对应value nsnumber
@@ -148,21 +150,25 @@
 // NSShadowAttributeName
     /*
      NSShadow
-     shadowOffset                                   阴影偏移默认      (0,-3)
+     shadowOffset                                   阴影偏移默认
      shadowBlurRadius                               阴影半径
      shadowColor                                    阴影颜色
      */
 
-// NSTextEffectAttributeName
-// NSAttachmentAttributeName
-// NSLinkAttributeName
-// NSBaselineOffsetAttributeName                删除线颜色
-// NSUnderlineColorAttributeName                下划线颜色
-// NSStrikethroughColorAttributeName
-// NSObliquenessAttributeName
-// NSExpansionAttributeName
-// NSWritingDirectionAttributeName
-// NSVerticalGlyphFormAttributeName
+// NSTextEffectAttributeName 7                  凸版印刷体效果
+    /*
+     NSTextEffectLetterpressStyle
+     
+     */
+// NSAttachmentAttributeName 7                  其他数据混排 图片
+// NSLinkAttributeName 7                        添加连接
+// NSBaselineOffsetAttributeName 7              设置行距
+// NSUnderlineColorAttributeName 7              下划线颜色
+// NSStrikethroughColorAttributeName 7          删除线颜色
+// NSObliquenessAttributeName 7                 字体倾斜
+// NSExpansionAttributeName 7                   字体膨胀
+// NSWritingDirectionAttributeName 7            绘制方向
+// NSVerticalGlyphFormAttributeName             排版 0水平 1垂直 (ios不支持水平)*
 // 效果测试
 - (void)xiaoguoceshi:(UITextView *)textView{
     NSLog(@"%@",textView.attributedText);
@@ -177,7 +183,8 @@
     paragraphStyle.alignment = NSTextAlignmentLeft;
     paragraphStyle.firstLineHeadIndent = 20;    // 首行锁进
     paragraphStyle.lineHeightMultiple = 1.5;    // 1.5行间距
-    
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, 2)];
+
     // 字体颜色
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(2, 2)];
     
@@ -224,33 +231,59 @@
     shadow1.shadowBlurRadius = 2.0;
     [attributedString addAttribute:NSShadowAttributeName value:shadow1 range:NSMakeRange(26, 2)];
     
+    // 凸版印刷体效果
+    [attributedString addAttribute:NSTextEffectAttributeName value:NSTextEffectLetterpressStyle range:NSMakeRange(28, 2)];
     
-    // 删除线颜色
-    [attributedString addAttribute:NSStrikethroughColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(12, 2)];
+    // 其他数据混排
+    UIImage *image = [UIImage imageNamed:@"001.gif"];
+    NSTextAttachment *textAttachment = [[NSTextAttachment alloc]init];
+    textAttachment.image = image;
+    textAttachment.bounds = CGRectMake(0, 0, 20, 20);
+    [attributedString addAttribute:NSAttachmentAttributeName value:textAttachment range:NSMakeRange(30,2)];
+    
+//    [attributedString insertAttributedString:[NSAttributedString attributedStringWithAttachment:textAttachment] atIndex:40];
+    
+    // 添加连接
+//    [attributedString addAttribute:NSLinkAttributeName value:@"http://www.baidu.com" range:NSMakeRange(32, 4)];
+//    NSDictionary *linkAttributes = @{NSForegroundColorAttributeName: [UIColor greenColor],
+//                                     NSUnderlineColorAttributeName: [UIColor lightGrayColor],
+//                                     NSUnderlineStyleAttributeName: @(NSUnderlinePatternSolid)};
+//    textView.linkTextAttributes = linkAttributes;
+
+    // 设置行距
+    [attributedString addAttribute:NSBaselineOffsetAttributeName value:[NSNumber numberWithFloat:50.0] range:NSMakeRange(36, 6)];
+    
     
     // 下划线颜色
     [attributedString addAttribute:NSUnderlineColorAttributeName value:[UIColor redColor] range:NSMakeRange(18, 4)];
     
+    // 删除线颜色
+    [attributedString addAttribute:NSStrikethroughColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(12, 2)];
+
+    // 字体倾斜
+    [attributedString addAttribute:NSObliquenessAttributeName value:[NSNumber numberWithFloat:-1.0] range:NSMakeRange(42, 4)];
     
+    // 字体膨胀
+    [attributedString addAttribute:NSExpansionAttributeName value:[NSNumber numberWithFloat:1.0] range:NSMakeRange(46, 4)];
     
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, 2)];
-    
-    
-    
-    
-    
-//    // 高亮
-//    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(2, 2)];
-//    
-//    // 下划线
-//    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:1] range:NSMakeRange(4, 2)];
-    
+//    // 绘制方向    
+//    NSArray *array = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSWritingDirectionRightToLeft|NSTextWritingDirectionOverride], nil];
+//    [attributedString addAttribute:NSWritingDirectionAttributeName value:array range:NSMakeRange(50, 10)];
     
     
     textView.attributedText = attributedString;
     
-}
+    
+    
 
+    
+}
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
+
+
+
+    return YES;
+}
 
 
 
