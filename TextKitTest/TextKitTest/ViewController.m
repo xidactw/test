@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "TextStorageTestViewController.h"
 
 @interface ViewController ()<UITextViewDelegate>
 @property (nonatomic,strong) UITextView *textView;
 @property (nonatomic,strong) UITextView *xiaoguoceshitextView;
+
 @end
 
 @implementation ViewController
@@ -22,6 +24,16 @@
     [self fenyexianshi];
     
     [self zitixiaoguo];
+    
+    
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height - 40, 100, 30)];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
+    button.backgroundColor = [UIColor blackColor];
+    [button addTarget:self action:@selector(textStorageTestButtonOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"TestStorageTest" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,8 +70,6 @@
     UITextView *textView1 = [[UITextView alloc]initWithFrame:frame1 textContainer:tc1];
     textView1.backgroundColor = [UIColor redColor];
     
-    textView1.contentSize = CGSizeMake(150, 220);
-    
     textView1.scrollEnabled = NO;
     
     [lm1 addTextContainer:tc2];
@@ -70,7 +80,15 @@
     [self.view addSubview:textView2];
     
     
+
 }
+- (void)textStorageTestButtonOnClick:(id)sender{
+    
+    TextStorageTestViewController * textStorageTestViewController = [[TextStorageTestViewController alloc]init];
+    [self presentViewController:textStorageTestViewController animated:YES completion:nil];
+    
+}
+
 
 
 // 字体效果
@@ -210,7 +228,8 @@
     
     // 下划线
     [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(18, 2)];
-    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleDouble] range:NSMakeRange(20, 2)];
+//    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleDouble] range:NSMakeRange(20, 2)];
+    [attributedString addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(20, 2)];
     
     // 字体颜色
     [attributedString addAttribute:NSStrokeColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(22, 2)];

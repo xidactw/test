@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B254EB9191C6E00005C7650 /* TextStorageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B254EB8191C6E00005C7650 /* TextStorageTestViewController.m */; };
 		1BBFE2FA191B72E7004672DC /* 001.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFE2F9191B72E7004672DC /* 001.gif */; };
 		1BC3E2AB1918789900137FDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC3E2AA1918789900137FDC /* Foundation.framework */; };
 		1BC3E2AD1918789900137FDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC3E2AC1918789900137FDC /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B254EB7191C6E00005C7650 /* TextStorageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextStorageTestViewController.h; sourceTree = "<group>"; };
+		1B254EB8191C6E00005C7650 /* TextStorageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextStorageTestViewController.m; sourceTree = "<group>"; };
 		1BBFE2F9191B72E7004672DC /* 001.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 001.gif; sourceTree = "<group>"; };
 		1BC3E2A71918789900137FDC /* TextKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC3E2AA1918789900137FDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				1BC3E2BC1918789900137FDC /* Main.storyboard */,
 				1BC3E2BF1918789900137FDC /* ViewController.h */,
 				1BC3E2C01918789900137FDC /* ViewController.m */,
+				1B254EB7191C6E00005C7650 /* TextStorageTestViewController.h */,
+				1B254EB8191C6E00005C7650 /* TextStorageTestViewController.m */,
 				1BC3E2C21918789900137FDC /* Images.xcassets */,
 				1BBFE2F9191B72E7004672DC /* 001.gif */,
 				1BC3E2B11918789900137FDC /* Supporting Files */,
@@ -256,6 +261,7 @@
 				1BC3E2C11918789900137FDC /* ViewController.m in Sources */,
 				1BC3E2BB1918789900137FDC /* AppDelegate.m in Sources */,
 				1BC3E2B71918789900137FDC /* main.m in Sources */,
+				1B254EB9191C6E00005C7650 /* TextStorageTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
