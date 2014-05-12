@@ -59,27 +59,30 @@
     
     
     NSTextContainer *tc1 = [[NSTextContainer alloc]init];
+    tc1.maximumNumberOfLines = 3;
     [lm1 addTextContainer:tc1];
     
     
     NSTextContainer *tc2 = [[NSTextContainer alloc]init];
-    
+
     CGRect frame1 = CGRectMake(10, 20, 150, 200);
     CGRect frame2 = CGRectMake(170, 20, 140, 200);
     
     UITextView *textView1 = [[UITextView alloc]initWithFrame:frame1 textContainer:tc1];
     textView1.backgroundColor = [UIColor redColor];
     
-    textView1.scrollEnabled = NO;
+//    textView1.scrollEnabled = NO;
+
     
     [lm1 addTextContainer:tc2];
+
     UITextView *textView2 = [[UITextView alloc]initWithFrame:frame2 textContainer:tc2];
     textView2.backgroundColor = [UIColor greenColor];
     
     [self.view addSubview:textView1];
     [self.view addSubview:textView2];
     
-    
+
 
 }
 - (void)textStorageTestButtonOnClick:(id)sender{

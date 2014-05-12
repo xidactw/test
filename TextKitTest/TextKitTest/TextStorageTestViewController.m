@@ -7,6 +7,7 @@
 //
 
 #import "TextStorageTestViewController.h"
+#import "TextContainerTestViewController.h"
 
 @interface TextStorageTestViewController ()<NSTextStorageDelegate>
 
@@ -47,7 +48,7 @@
 - (void)initialize{
     self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.view.backgroundColor = [UIColor orangeColor];
-    
+
     
     NSString *neirong = @"Objective-C，通常写作ObjC和较少用的Objective C或Obj-C，是扩充C的面向对象编程语言。它主要使用于Mac OS X和GNUstep这两个使用OpenStep标准的系统，而在NeXTSTEP和OpenStep中它更是基本语言。Objective-C可以在gcc运作的系统写和编译，因为gcc含Objective-C的编译器。1980年代初布莱德·确斯(Brad Cox)在其公司Stepstone发明Objective-C。他对软件设计和编程里的真实可用度问题十分关心。Objective-C最主要的描述是他1986年出版的Object Oriented Programming: An Evolutionary Approach. Addison Wesley. ISBN 0-201-54834-8.[1]Objective-C用途：编写iOS操作系统(如：iPhone、iPod touch、iPad 等苹果移动终端设备 )应用程序的利器。　Objective-C的流行当归功于iPhone的成功，因为Objective-C一直被用于编写iPhone应用程序。";
     
@@ -72,6 +73,21 @@
     _textView.backgroundColor = [UIColor whiteColor];
     
     
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height - 40, 100, 30)];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
+    button.backgroundColor = [UIColor blackColor];
+    [button addTarget:self action:@selector(textContainerTestButtonOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"TestContainerTest" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    
+    
+}
+
+- (void)textContainerTestButtonOnClick:(id)sender{
+    
+    TextContainerTestViewController * textContainerTestViewController = [[TextContainerTestViewController alloc]init];
+    [self presentViewController:textContainerTestViewController animated:YES completion:nil];
     
 }
 
