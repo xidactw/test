@@ -22,6 +22,7 @@
 		1BA2984219209B9200C33EA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2984019209B9200C33EA4 /* InfoPlist.strings */; };
 		1BA2984419209B9200C33EA4 /* xdctwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2984319209B9200C33EA4 /* xdctwTests.m */; };
 		1BA2984E19209BB600C33EA4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2984D19209BB600C33EA4 /* CoreMotion.framework */; };
+		1BBD11BF1921B950003C79C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD11BE1921B950003C79C2 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1BA2984119209B9200C33EA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BA2984319209B9200C33EA4 /* xdctwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xdctwTests.m; sourceTree = "<group>"; };
 		1BA2984D19209BB600C33EA4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		1BBD11BE1921B950003C79C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBD11BF1921B950003C79C2 /* CoreLocation.framework in Frameworks */,
 				1BA2984E19209BB600C33EA4 /* CoreMotion.framework in Frameworks */,
 				1BA2981B19209B9200C33EA4 /* CoreGraphics.framework in Frameworks */,
 				1BA2981D19209B9200C33EA4 /* UIKit.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		1BA2981719209B9200C33EA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BBD11BE1921B950003C79C2 /* CoreLocation.framework */,
 				1BA2984D19209BB600C33EA4 /* CoreMotion.framework */,
 				1BA2981819209B9200C33EA4 /* Foundation.framework */,
 				1BA2981A19209B9200C33EA4 /* CoreGraphics.framework */,
@@ -464,6 +468,7 @@
 				1BA2984919209B9200C33EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BA2984A19209B9200C33EA4 /* Build configuration list for PBXNativeTarget "xdctwTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +477,7 @@
 				1BA2984C19209B9200C33EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
