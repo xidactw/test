@@ -12,6 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // 晃动检测第一种方式
+    application.applicationSupportsShakeToEdit = YES;
+    
     // Override point for customization after application launch.
     return YES;
 }
